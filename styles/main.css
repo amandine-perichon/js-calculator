@@ -5,14 +5,14 @@
   max-width: 300px;
 }
 
+.columns, .row {
+  height: 60px;
+}
+
 .three.columns {
   margin: 0;
   width: 25%;
   border: 1px solid #9c9999;
-}
-
-.columns, .row {
-  height: 60px;
 }
 
 .columns {
