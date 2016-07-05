@@ -20,5 +20,16 @@ $(document).ready(function(){
     input = "(" + input + ")" + "/100"
     $(".display").text(eval(input))
   })
+  $(".ac").click(function(){
+    input = ""
+    $(".display").text(input)
+  })
+  $(".ce").click(function(){
+    var splitArr = input.split(/[\+\-\*\/]/)
+    var length = splitArr.length
+    var last = splitArr[length-1]
+    input = input.substring(0,input.length-last.length)
+    $(".display").text(input)
+  })
 })
 
