@@ -30,8 +30,10 @@ $(document).ready(function(){
     $(".display").text(eval(input))
   })
   $(".percent").click(function(){
-    input = "(" + input + ")" + "/100"
-    display = eval(input)
+    if (input !== "") {
+      input = "(" + input + ")" + "/100"
+      display = eval(input)
+  }
     $(".display").text(display)
   })
   $(".ac").click(function(){
