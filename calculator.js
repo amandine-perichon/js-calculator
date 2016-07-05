@@ -2,9 +2,12 @@ $(document).ready(function(){
   var input = ""
   var display = ""
   $(".num").click(function(evt){
-   input = input + ($(evt.target).html())
-   display = display + ($(evt.target).html())
-   $(".display").text(display)
+    if (display === "0") {
+      display = ""
+    }
+    input = input + ($(evt.target).html())
+    display = display + ($(evt.target).html())
+    $(".display").text(display)
   }) 
   $(".operator").click(function(evt){
     var operator = ($(evt.target).html()) 
