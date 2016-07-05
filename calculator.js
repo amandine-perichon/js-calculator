@@ -13,10 +13,11 @@ $(document).ready(function(){
     input = input + operator
     $(".display").text(input)
   })
-  $(".func").click(function(){
-    console.log("wassup")
-  })
   $(".equal").click(function(){
+    $(".display").text(eval(input))
+  })
+  $(".percent").click(function(){
+    input = "(" + input + ")" + "/100"
     $(".display").text(eval(input))
   })
 })
