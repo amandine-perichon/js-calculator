@@ -18,9 +18,12 @@ $(document).ready(function(){
     if (operator === "X"){
       operator = "*"
     } 
-    input = eval(input)
-    $(".display").text(input)
-    input = input + operator
+    if (input !== "") {
+      input = eval(input)
+      display = input
+      input = input + operator
+    }
+    $(".display").text(display)
     display = ""
   })
   $(".equal").click(function(){
@@ -28,19 +31,21 @@ $(document).ready(function(){
   })
   $(".percent").click(function(){
     input = "(" + input + ")" + "/100"
-    $(".display").text(eval(input))
+    display = eval(input)
+    $(".display").text(display)
   })
   $(".ac").click(function(){
     input = ""
     display = ""
-    $(".display").text(input)
+    $(".display").text(display)
   })
   $(".ce").click(function(){
     var splitArr = input.split(/[\+\-\*\/]/)
     var length = splitArr.length
     var last = splitArr[length-1]
     input = input.substring(0,input.length-last.length-1)
-    $(".display").text(input)
+    display="0"
+    $(".display").text(display)
   })
 })
 
