@@ -38,7 +38,7 @@ $(document).ready(function(){
   })
   $(".ac").click(function(){
     input = ""
-    display = ""
+    display = "0"
     $(".display").text(display)
   })
   $(".ce").click(function(){
