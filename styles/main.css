@@ -29,7 +29,7 @@
   background-color: #9c9999; 
 }
 
-.operator {
+.operator, .equal {
   color: white;
   background-color: #f5932b;
 }
