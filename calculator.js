@@ -13,13 +13,12 @@ function start () {
 }
 
 function processNumber (evt) {
-    if (display === "0") {
-      display = ""
-    }
-    input = input + ($(evt.target).html())
-    display = display + ($(evt.target).html())
-    $(".display").text(display)
-  }
+  var number = $(evt.target).html()
+  display = display === "0" ? "" : display
+  input = input + number
+  display = display + number
+  $(".display").text(display)
+}
 
 function processOperator (evt){
     var operator = ($(evt.target).html()) 
