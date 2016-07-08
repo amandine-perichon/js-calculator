@@ -1,45 +1,39 @@
-var input = ""
-var display = ""
+var input = ''
+var display = ''
 
 $(document).ready(start)
 
 function start () {
-  $(".num").click(processNumber)
-  $(".operator").click(processOperator)
-  $(".equal").click(compute)
-  $(".percent").click(divideByOneHundred)
-  $(".ac").click(clearAll)
-  $(".ce").click(clearLast)
+  $('.num').click(processNumber)
+  $('.operator').click(processOperator)
+  $('.equal').click(compute)
+  $('.percent').click(divideByOneHundred)
+  $('.ac').click(clearAll)
+  $('.ce').click(clearLast)
 }
 
 function processNumber (evt) {
   var number = $(evt.target).html()
-  display = display === "0" ? "" : display
+  display = display === '0' ? '' : display
   input = input + number
   display = display + number
-  $(".display").text(display)
+  $('.display').text(display)
 }
 
 function processOperator (evt){
-    var operator = ($(evt.target).html()) 
-    var length = input.length
-    if (input[input.length-1] === "+" | 
-        input[input.length-1] === "-" |
-        input[input.length-1] === "/" | 
-        input[input.length-1] === "X") {
-      input = input.substring(0, input.length-1)
-    }
-    if (operator === "X"){
-      operator = "*"
-    } 
-    if (input !== "") {
-      input = eval(input)
-      display = input
-      input = input + operator
-    }
-    $(".display").text(display)
-    display = ""
+  var operator = ($(evt.target).html()) 
+  if ((/[\+\-\*\/]/gi).test(input[input.length-1])) {
+    input = input.substring(0, input.length-1)
   }
+  operator = operator === 'X' ? '*' : operator
+  if (input !== "") {
+    input = eval(input)
+    display = input
+    input = input + operator
+  }
+  $(".display").text(display)
+  display = ""
+}
 
 function compute() {
     $(".display").text(eval(input))
