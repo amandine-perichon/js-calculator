@@ -15,8 +15,8 @@ function start () {
 function processNumber (evt) {
   var number = $(evt.target).html()
   display = display === '0' ? '' : display
-  input = input + number
-  display = display + number
+  input += number
+  display += number
   $('.display').text(display)
 }
 
