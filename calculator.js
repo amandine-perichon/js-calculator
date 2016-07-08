@@ -21,45 +21,44 @@ function processNumber (evt) {
 }
 
 function processOperator (evt){
-  var operator = ($(evt.target).html()) 
+  var operator = ($(evt.target).html())
   if ((/[\+\-\*\/]/gi).test(input[input.length-1])) {
     input = input.substring(0, input.length-1)
   }
   operator = operator === 'X' ? '*' : operator
-  if (input !== "") {
+  if (input !== '') {
     input = eval(input)
     display = input
     input = input + operator
   }
-  $(".display").text(display)
-  display = ""
+  $('.display').text(display)
+  display = ''
 }
 
-function compute() {
+function compute () {
   input = eval(input)
   display = eval(input)
   $('.display').text(display)
 }
 
 function divideByOneHundred () {
-  if (input !== "") {
-    input = "(" + input + ")" + "/100"
+  if (input !== '') {
+    input = '(' + input + ')' + '/100'
     display = eval(input)
   }
-  $(".display").text(display)
+  $('.display').text(display)
 }
 
-function clearAll() {
-    input = ""
-    display = "0"
-    $(".display").text(display)
-  }
+function clearAll () {
+  input = ''
+  display = '0'
+  $('.display').text(display)
+}
 
 function clearLast () {
-    var splitArr = input.split(/[\+\-\*\/]/)
-    var length = splitArr.length
-    var last = splitArr[length-1]
-    input = input.substring(0,input.length-last.length-1)
-    display="0"
-    $(".display").text(display)
-  }
+  var splitArr = input.split(/[\+\-\*\/]/)
+  var last = splitArr[splitArr.length-1]
+  input = input.substring(0, input.length-last.length-1)
+  display = '0'
+  $('.display').text(display)
+}
