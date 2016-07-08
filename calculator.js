@@ -36,8 +36,10 @@ function processOperator (evt){
 }
 
 function compute() {
-    $(".display").text(eval(input))
-  }
+  input = eval(input)
+  display = eval(input)
+  $('.display').text(display)
+}
 
 function divideByOneHundred () {
   if (input !== "") {
